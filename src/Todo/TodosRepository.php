@@ -2,18 +2,17 @@
 namespace App\Todo;
 
 use PDO;
-use ArrayAccess;    
 
 class TodosRepository {
 
-    protected $pdo;
+    public $pdo;
 
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
     public function getTableName() {
-        return "todo";
+        return "todos";
     }
 
     public function getModelName() {

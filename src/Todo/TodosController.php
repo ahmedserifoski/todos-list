@@ -1,7 +1,7 @@
 <?php 
 namespace App\Todo;
 
-use App\Todo\TodosRepository;
+// use App\Todo\TodosRepository;
 
 class TodosController {
 
@@ -16,7 +16,7 @@ class TodosController {
 
     public function index() {
         $todos = $this->todosRepository->fetchAll();
-
+        // var_dump($todos);
         $this->render("todo/index", [
             "todos" => $todos
         ]);

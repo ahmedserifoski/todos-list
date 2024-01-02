@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function ($class) {
-
+    
     // project-specific namespace prefix
     // escaping the \ with a \, that's why double \\
     $prefix = 'App\\';
