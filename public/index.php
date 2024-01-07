@@ -9,7 +9,11 @@ $routes = [
     "/index" => [
       "controller" => "todosController",
       "method" => "index"
-    ]
+    ],
+    "/addTodo" => [
+        "controller" => "todosController",
+        "method" => "addTodo"
+      ]
   ];
   
   if(isset($routes[$pathInfo])) {

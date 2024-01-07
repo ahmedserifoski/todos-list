@@ -8,9 +8,9 @@
                 <li class="list-group-item bg-warning"><?php echo($todo["todo"]); ?></li>
             <?php endforeach; ?>
         </ul>
-        <form id="add-todo-form" class="d-flex justify-content-between mt-3">
-            <input type="text" class="form-control" id="todo-input" placeholder="Enter a new todo">
-            <button type="button" class="btn btn-primary" id="add-todo-btn">Add To-do</button>
+        <form method="post" action="addTodo" id="add-todo-form" class="d-flex justify-content-between mt-3">
+            <input type="text" class="form-control" id="todo" name="todo" placeholder="Enter a new todo">
+            <button type="submit" class="btn btn-primary" id="add-todo-btn">Add To-do</button>
         </form>
     </div>
     <?php ?>
