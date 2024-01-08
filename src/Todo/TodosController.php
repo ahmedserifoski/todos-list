@@ -43,6 +43,26 @@ class TodosController {
             "todos" => $todos
         ]);
     }
+
+    public function deleteTodo() {
+        if (!empty($_POST["deleteTodo"])) {
+            $id = $_POST["deleteTodo"];
+            $this->todosRepository->deleteTodoById($id);
+            header("Location: index");
+            exit;
+        }
+    
+        // Other logic, if needed
+    
+        // Fetch updated todos after deletion
+        $todos = $this->todosRepository->fetchAll();
+    
+        // Render the view
+        $this->render("todo/index", [
+            "todos" => $todos
+        ]);
+    }
+    
 }
 
 
