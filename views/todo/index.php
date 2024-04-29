@@ -7,8 +7,12 @@
         <ul class="list-group mt-3" style="min-width: 500px;">
             <?php foreach($todos as $todo):?>
                 <li class="list-group-item bg-warning" 
-                    ondblclick="document.getElementById('deleteTodo<?php echo $todo->id; ?>').submit();">
-                    <?php echo($todo->todo); ?>
+                    onclick="toggleStrikeThrough(this)"
+                    ondblclick="document.getElementById('deleteTodo<?= $todo->id ?>').submit();"
+                    onmouseover="this.style.cursor='pointer'"
+                    onmouseout="this.style.cursor='default'"
+                    style="cursor: default; <?= $todo->completed ? 'text-decoration: line-through;' : '' ?>">
+                    <?= $todo->todo ?>
 
                     <!-- Delete Form -->
                     <form action="deleteTodo" method="post" 
@@ -23,6 +27,12 @@
             <button type="submit" class="btn btn-warning" id="add-todo-btn">Add To-do</button>
         </form>
     </div>
+
+    <script>
+        function toggleStrikeThrough(element) {
+            element.style.textDecoration = element.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+        }
+    </script>
 <?php include __DIR__ . "/../layout/footer.php";?>
 
     
